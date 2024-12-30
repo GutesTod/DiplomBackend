@@ -6,4 +6,4 @@ from .proposals import Proposal
 from .users import User
 from .votes import Vote
 
-__all__ = ["Archive", "Category", "Issue", "Moderation", "Proposal", "User", "Votes"]
+__all__ = ["Archive", "Category", "Issue", "Moderation", "Proposal", "User", "Vote"]

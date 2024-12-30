@@ -10,4 +10,4 @@ class Vote(Base):
     user_id = Column(Integer, ForeignKey('users.user_id'), nullable=False)
     vote_type = Column(Enum(VoteEnum), nullable=False)
     
-    archive = relationship("Archive", backref="votes")
+    archive = relationship("Archive", backref="votes", cascade="all, delete-orphan")

@@ -15,7 +15,7 @@ class User(Base):
     secondname = Column(String)
     role = Column(Enum(RoleEnum), nullable=False)
 
-    issues = relationship("Issue", backref="users")
-    proposals = relationship("Proposal", backref="users")
-    votes = relationship("Vote", backref="users")
-    moderations = relationship("Moderation", backref="users")
+    issues = relationship("Issue", backref="users", cascade="all, delete-orphan")
+    proposals = relationship("Proposal", backref="users", cascade="all, delete-orphan")
+    votes = relationship("Vote", backref="users", cascade="all, delete-orphan")
+    moderations = relationship("Moderation", backref="users", cascade="all, delete-orphan")

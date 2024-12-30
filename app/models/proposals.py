@@ -15,5 +15,5 @@ class Proposal(Base):
     category_id = Column(Integer, ForeignKey('category.category_id'), nullable=False)
     priority = Column(Enum(PriorityEnum), nullable=False)
     
-    archive = relationship("Archive", backref="proposals")
-    moderations = relationship("Moderation", backref="proposals")
+    archive = relationship("Archive", backref="proposals", cascade="all, delete-orphan")
+    moderations = relationship("Moderation", backref="proposals", cascade="all, delete-orphan")

@@ -9,5 +9,5 @@ class Category(Base):
     category_id = Column(Integer, primary_key=True, autoincrement=True)
     category_name = Column(String, nullable=False)
     
-    issues = relationship("Issue", backref="category")
-    proposals = relationship("Proposal", backref="category")
+    issues = relationship("Issue", backref="category", cascade="all, delete-orphan")
+    proposals = relationship("Proposal", backref="category", cascade="all, delete-orphan")

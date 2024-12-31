@@ -8,7 +8,7 @@ from app.schemas.user import RoleEnum
 
 class User(Base):
     __tablename__ = 'users'
-    user_id = Column(Integer, primary_key=True, autoincrement=True)
+    id = Column(Integer, primary_key=True, autoincrement=True)
     email = Column(String, unique=True, nullable=False)
     name = Column(String, nullable=False)
     surname = Column(String, nullable=False)

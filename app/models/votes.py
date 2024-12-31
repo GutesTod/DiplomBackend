@@ -6,8 +6,8 @@ from app.schemas.vote import VoteEnum
 
 class Vote(Base):
     __tablename__ = 'votes'
-    vote_id = Column(Integer, primary_key=True, autoincrement=True)
-    user_id = Column(Integer, ForeignKey('users.user_id'), nullable=False)
+    id = Column(Integer, primary_key=True, autoincrement=True)
+    user_id = Column(Integer, ForeignKey('users.id'), nullable=False)
     vote_type = Column(Enum(VoteEnum), nullable=False)
     
     archive = relationship("Archive", backref="votes", cascade="all, delete-orphan")
